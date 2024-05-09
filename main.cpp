@@ -4,7 +4,7 @@
 #include<thread>
 #include<chrono>
 
-//randomness
+//randomness limits
 int xRg = 15 - 1 + 1;
 int yRg = 40 - 1 + 1;
 
@@ -18,7 +18,7 @@ char al[15] [40];
 class apple{
     public:
     int x, y;
-    char Shape = 'C';
+    const char Shape = 'C';
 
 
 
@@ -27,7 +27,7 @@ class apple{
 class snake{
     public:
 
-    char body = '$';
+    const char body = '$';
     int x, y;
     char dir; //N north S south W west E east
     int bdycount;
