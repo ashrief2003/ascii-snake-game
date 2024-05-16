@@ -101,16 +101,16 @@ int pr(){
 void controls(){
     switch(button){
         case 'W':
-            Snake.dir = 'N';
+            if(Snake.dir != 'S') Snake.dir = 'N';
         break;
         case 'S':
-            Snake.dir = 'S';
+            if(Snake.dir != 'N') Snake.dir = 'S';
         break;
         case 'D':
-            Snake.dir = 'E';
+            if(Snake.dir != 'W') Snake.dir = 'E';
         break;
         case 'A':
-            Snake.dir = 'W';
+            if(Snake.dir != 'E') Snake.dir = 'W';
         break;
 
         default:
@@ -142,9 +142,12 @@ int main(){
     Apple.y = 6;
 
     while(1){
+
+
         if (kbhit()) {
             button = getch(); 
         }
+
         //checks whatever button you pressed to increase which one of the vectors position to increase
         controls();
         system("cls");
@@ -162,9 +165,12 @@ int main(){
         placingSnake(Snake.x, Snake.y);
         placingApple(Apple.x, Apple.y);
         directions();
+    
 
         //print results on screen
+        
         pr();
+
         
         //debbug some values to see them
         debug();
@@ -177,6 +183,8 @@ int main(){
         button = ' ';
   
     }
+
+    end:
     
     return 0;
 }
