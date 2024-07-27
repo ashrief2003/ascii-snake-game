@@ -1,5 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include<cstdio.h>
 #include<conio.h>
 #include<thread>
 #include<chrono>
