@@ -1,7 +1,19 @@
 #include<cstdio.h>
 #include<conio.h>
-#include<thread>
-#include<chrono>
+
+
+#ifdef __WIN32
+
+#include<windows.h>
+
+#else
+
+#include<unistd.h>
+
+#endif
+
+
+
 
 //randomness limits
 int xRg = 15 - 1 + 1;
@@ -177,7 +189,7 @@ int main(){
         (eaten() == true)? AppleRandomPosition():
 
         //some delay
-        std::this_thread::sleep_for(std::chrono::milliseconds(300));
+        Sleep(1)
         //std::cout << button;
         button = ' ';
   
